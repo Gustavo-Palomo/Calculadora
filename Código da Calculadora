@@ -1,0 +1,45 @@
+# prompt: calculadora
+
+def Soma(a, b):
+  """Soma dos numeros."""
+  return a + b
+
+def Subtração(a, b):
+  """Subtração dos numeros."""
+  return a - b
+
+def Multiplicação(a, b):
+  """Multiplicação dos numeros."""
+  return a * b
+
+def Divisão(a, b):
+  """Divisão dos numeros."""
+  if b == 0:
+    raise ValueError("Não se pode dividir por 0.")
+  return a // b
+
+def calcular(operacion, a, b):
+  """Calcule o resultado de uma operação matemática."""
+  if operacion == "Soma":
+    return Soma(a, b)
+  elif operacion == "Subtração":
+    return Subtração(a, b)
+  elif operacion == "Multiplicação":
+    return Multiplicação(a, b)
+  elif operacion == "Divisão":
+    return Divisão(a, b)
+  else:
+    return ValueError("Operação não valida.")
+
+def main():
+  """Obtenha a operação e os números de entrada do usuário e calcule o resultado."""
+  operacion = input("Que operação você quer fazer? (Soma, Subtração, Multiplicação, Divisão): ")
+  a = float(input("Digite o primeiro numero: "))
+  b = float(input("Digite o segundo numero: "))
+
+  resultado = calcular(operacion, a, b)
+
+  print("O resultado é:", resultado)
+
+if __name__ == "__main__":
+  main()
